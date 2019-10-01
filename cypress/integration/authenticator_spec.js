@@ -1,17 +1,17 @@
 describe('Authenticator:', function() {
-  // setup the application state
+  // Step 1: setup the application state
   beforeEach(function() {
     cy.visit('/');
   });
-
+  
   describe('Sign In:', () => {
     it('allows a user to signin', () => {
-      // Sign in
+      // Step 2: Take an action (Sign in)
       cy.get(selectors.usernameInput).type("nikhil.86@gmail.com");
       cy.get(selectors.signInPasswordInput).type("Ch!ps789");
       cy.get(selectors.signInSignInButton).contains('Sign In').click();
 
-      // Check for signed in page
+      // Step 3: Make an assertion (Check for sign-out text)
         cy.get(selectors.signOutButton).contains('Sign Out');
     });
   });
